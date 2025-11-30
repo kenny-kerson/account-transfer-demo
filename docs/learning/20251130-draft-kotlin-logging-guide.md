@@ -1,5 +1,7 @@
 # Kotlin 로깅 가이드 (SLF4J + Logback)
 
+#Kotlin #Logging #SLF4J #SpringBoot #JavaInterop
+
 ## Spring Boot 의존성
 
 Spring Boot에서 별도의 의존성 추가가 **필요 없다**.
