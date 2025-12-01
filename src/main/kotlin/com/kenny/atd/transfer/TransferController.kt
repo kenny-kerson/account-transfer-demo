@@ -13,4 +13,10 @@ class TransferController {
 
         return TransferDto.Out( account = input.account)
     }
+
+    @PostMapping( "/transfer/validate")
+    fun validateTransfer( input: ValidationTransferDto.In ): ValidationTransferDto.Out {
+
+        return ValidationTransferDto.Out( account = input.acocunt )
+    }
 }
