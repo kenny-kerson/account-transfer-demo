@@ -5,12 +5,14 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class TransferController {
+class TransferController(
+    private val transferService: TransferService
+) {
     private val logger = LoggerFactory.getLogger(TransferController::class.java)
 
     @PostMapping("/transfer")
     fun transfer( input: TransferDto.In ): TransferDto.Out {
-
+        transferService.transfer();
         return TransferDto.Out( account = input.account )
     }
 
