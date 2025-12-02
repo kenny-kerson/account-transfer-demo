@@ -2,7 +2,7 @@ package com.kenny.atd.transfer
 
 object ValidationTransferDto {
     data class In(
-        val acocunt: String,
+        val account: String,
     )
 
     data class Out(

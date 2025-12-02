@@ -11,12 +11,12 @@ class TransferController {
     @PostMapping("/transfer")
     fun transfer( input: TransferDto.In ): TransferDto.Out {
 
-        return TransferDto.Out( account = input.account)
+        return TransferDto.Out( account = input.account )
     }
 
     @PostMapping( "/transfer/validate")
     fun validateTransfer( input: ValidationTransferDto.In ): ValidationTransferDto.Out {
 
-        return ValidationTransferDto.Out( account = input.acocunt )
+        return ValidationTransferDto.Out( account = input.account )
     }
 }
