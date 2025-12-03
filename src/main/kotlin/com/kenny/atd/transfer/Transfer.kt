@@ -7,7 +7,6 @@ class Transfer {
     fun transfer(
         fromAccount: Account,
         toAccount: Account,
-
         money: Money
     ) {
         fromAccount.withdraw( money )
