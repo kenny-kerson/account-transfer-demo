@@ -12,8 +12,17 @@ class TransferController(
 
     @PostMapping("/transfer")
     fun transfer( input: TransferDto.In ): TransferDto.Out {
-        transferService.transfer();
-        return TransferDto.Out( account = input.account )
+        transferService.transfer(
+            input.fromAccountNumber,
+            input.toAccountNumber,
+            input.transferAmount,
+        )
+
+        return TransferDto.Out(
+            input.fromAccountNumber,
+            input.toAccountNumber,
+            input.transferAmount,
+        )
     }
 
     @PostMapping( "/transfer/validate")

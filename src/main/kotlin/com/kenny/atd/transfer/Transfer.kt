@@ -4,7 +4,7 @@ import com.kenny.atd.account.Account
 import com.kenny.atd.shared.Money
 
 class Transfer {
-    fun transfer(
+    fun execute(
         fromAccount: Account,
         toAccount: Account,
         money: Money
