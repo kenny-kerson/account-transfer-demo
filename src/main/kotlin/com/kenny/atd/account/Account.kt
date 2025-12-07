@@ -3,8 +3,8 @@ package com.kenny.atd.account
 import com.kenny.atd.shared.Money
 
 class Account(
-    private val accountNo: String,
-    private val balance: Money
+    val accountNumber: String,
+    val balance: Money
 ) {
     fun withdraw( amount: Money ): Account {
         return this
