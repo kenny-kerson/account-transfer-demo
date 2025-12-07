@@ -4,7 +4,6 @@ import com.kenny.atd.account.LoadAccount
 import com.kenny.atd.shared.Money
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import java.math.BigDecimal
 
 @Service
 class TransferService(
@@ -19,8 +18,13 @@ class TransferService(
         toAccountNumber: String,
         transferAmount: String,
     ) {
+        logger.debug("[kenny] Transfer received")
         val fromAccount = loadAccount.execute(fromAccountNumber)
         val toAccount = loadAccount.execute(toAccountNumber)
-        transfer.execute(fromAccount, toAccount, Money(transferAmount.toBigDecimal()))
+        transfer.execute(
+            fromAccount,
+            toAccount,
+            Money(transferAmount.toBigDecimal())
+        )
     }
 }

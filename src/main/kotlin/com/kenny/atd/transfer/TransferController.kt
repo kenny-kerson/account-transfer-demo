@@ -12,6 +12,8 @@ class TransferController(
 
     @PostMapping("/transfer")
     fun transfer( input: TransferDto.In ): TransferDto.Out {
+        // TODO: WIP
+        logger.debug("[kenny] Transfer received")
         transferService.transfer(
             input.fromAccountNumber,
             input.toAccountNumber,
@@ -27,7 +29,7 @@ class TransferController(
 
     @PostMapping( "/transfer/validate")
     fun validateTransfer( input: ValidationTransferDto.In ): ValidationTransferDto.Out {
-
+        // TODO: PENDING
         return ValidationTransferDto.Out( account = input.account )
     }
 }
