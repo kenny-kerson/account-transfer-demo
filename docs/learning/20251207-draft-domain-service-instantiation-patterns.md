@@ -2,6 +2,30 @@
 
 #Kotlin #DDD #DomainService #POJO #DependencyInjection
 
+## Transfer 클래스 분석
+
+현재 Transfer 클래스는 **도메인 엔터티보다는 Domain Service**에 가깝다.
+
+```kotlin
+class Transfer {
+    fun execute(fromAccount: Account, toAccount: Account, money: Money) {
+        fromAccount.withdraw(money)
+        toAccount.deposit(money)
+    }
+}
+```
+
+**Domain Service의 특징:**
+- 상태(state)가 없음
+- 여러 Aggregate(Account) 간 협력을 조율
+- 특정 엔터티에 속하지 않는 도메인 로직
+
+> [!note] Entity vs Domain Service
+> - **Entity**: 고유 식별자, 상태 보유, 자신의 상태 변경 로직
+> - **Domain Service**: 상태 없음, 여러 엔터티 간 협력 조율, 특정 엔터티에 속하지 않는 로직
+
+---
+
 ## 문제 상황
 
 도메인 엔터티/서비스를 POJO로 유지하면서 비즈니스 로직을 사용하기 위한 객체 생성 방법
