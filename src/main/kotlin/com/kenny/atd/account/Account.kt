@@ -5,6 +5,7 @@ import com.kenny.atd.shared.Money
 
 class Account(
     val accountNumber: AccountNumber,
+    val accountStatus: AccountStatus,
     val balance: Money
 ) {
     fun withdraw( amount: Money ): Account {
