@@ -1,13 +1,15 @@
 package com.kenny.atd.transfer
 
-import com.kenny.atd.account.AccountNumber
-import com.kenny.atd.user.UserId
 import java.time.LocalDate
 
 data class TransferHistoryEntity (
-    val transferDateMM: LocalDate,
-    val userId: UserId,
-    val transferStatus: TransferStatus,
-    // TODO: Account 애그리거트의 ID VO객체를 참조하는 것이라 허용되는 패턴이지만, 타 애그리거트의 객체를 직접 참조하는 것이 불편하다면, 공유커널 패턴으로 사용하는 것을 검토햅로 수 있음. 그런데 공유커널 패턴이 오히려 공통지옥을 만들 수 있을 것 같음
-    val accountNumber: AccountNumber,
+    // 테이블 엔터티와 도메인 엔터티가 명시적으로 분리되어 있기에,
+    // 최대한 테이블의 컬럼 속성과 유사한 기본타입으로 변수 타입을 셋팅한다
+    // 테이블 데이터를 Entity와 VO로 매핑하는 것은 Extension 함수에서 수행한다
+    // 테이블의 데이터도 온전히 가지고, 도메인 Entity도 온전히 만듦으로써, 패러다임 불일치를 최소화한다
+    val transferDate: String,
+    val transferTime: String,
+    val userId: String,
+    val transferStatus: String,
+    val accountNumber: String,
 )
