@@ -1,6 +1,8 @@
-package com.kenny.atd.transfer
+package com.kenny.atd.transfer.persistance
 
-import com.kenny.atd.account.Account
+import com.kenny.atd.account.entity.Account
+import com.kenny.atd.transfer.TransferStatus
+import com.kenny.atd.transfer.vo.TransferDateTime
 import com.kenny.atd.user.UserId
 
 data class TransferHistory(

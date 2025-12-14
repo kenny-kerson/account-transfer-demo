@@ -1,4 +1,4 @@
-package com.kenny.atd.account
+package com.kenny.atd.account.vo
 
 import com.kenny.atd.shared.BankCode
 

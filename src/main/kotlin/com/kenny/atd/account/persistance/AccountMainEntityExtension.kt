@@ -1,5 +1,8 @@
-package com.kenny.atd.account
+package com.kenny.atd.account.persistance
 
+import com.kenny.atd.account.AccountStatus
+import com.kenny.atd.account.entity.Account
+import com.kenny.atd.account.vo.AccountNumber
 import com.kenny.atd.shared.BankCode
 import com.kenny.atd.shared.Money
 

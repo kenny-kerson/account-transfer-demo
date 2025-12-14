@@ -2,6 +2,7 @@ package com.kenny.atd.transfer
 
 import com.kenny.atd.account.LoadAccount
 import com.kenny.atd.shared.Money
+import com.kenny.atd.transfer.entity.Transfer
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 

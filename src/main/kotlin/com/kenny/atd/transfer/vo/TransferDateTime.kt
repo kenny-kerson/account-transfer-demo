@@ -1,6 +1,5 @@
-package com.kenny.atd.transfer
+package com.kenny.atd.transfer.vo
 
-import com.kenny.atd.user.UserId
 import java.time.LocalDateTime
 
 data class TransferDateTime(

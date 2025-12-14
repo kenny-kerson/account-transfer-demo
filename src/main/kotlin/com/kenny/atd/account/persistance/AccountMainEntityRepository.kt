@@ -1,6 +1,6 @@
-package com.kenny.atd.account
+package com.kenny.atd.account.persistance
 
-import com.kenny.atd.shared.Money
+import com.kenny.atd.account.AccountStatus
 import org.springframework.stereotype.Repository
 
 @Repository
