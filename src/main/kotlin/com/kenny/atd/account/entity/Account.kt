@@ -1,6 +1,5 @@
 package com.kenny.atd.account.entity
 
-import com.kenny.atd.account.vo.AccountNumber
 import com.kenny.atd.account.AccountStatus
 import com.kenny.atd.shared.Money
 

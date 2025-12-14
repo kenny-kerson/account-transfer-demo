@@ -10,7 +10,8 @@ class AccountMainEntityRepository {
         return AccountMainEntity(
             accountNumber = "33331231234",
             balance = "10000".toBigDecimal(),
-            accountStatus = AccountStatus.NORMAL
+            accountStatus = AccountStatus.NORMAL.code,
+            bankCode = "090"
         )
     }
 }
