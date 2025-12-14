@@ -1,6 +1,7 @@
 package com.kenny.atd.account.entity
 
 import com.kenny.atd.account.AccountStatus
+import com.kenny.atd.account.vo.AccountId
 import com.kenny.atd.shared.Money
 
 class Account(

@@ -1,6 +1,8 @@
 package com.kenny.atd.transfer
 
 import com.kenny.atd.account.LoadAccount
+import com.kenny.atd.account.entity.Account
+import com.kenny.atd.account.vo.AccountId
 import com.kenny.atd.shared.Money
 import com.kenny.atd.transfer.entity.Transfer
 import org.slf4j.LoggerFactory
@@ -8,24 +10,22 @@ import org.springframework.stereotype.Service
 
 @Service
 class TransferService(
-    private val loadAccount: LoadAccount,
+    val loadAccount: LoadAccount,
 ) {
     private val logger = LoggerFactory.getLogger(TransferService::class.java)
-    // TODO: 이런 식으로 구현함에 OOD 혹은 기술적인 문제가 없을지?
-    private val transfer = Transfer()
 
+    // TODO: DDD 전술적 설계에서의 어플리케이션 서비스와 도메인 서비스가 통합된 형태인데 문제가 없을지 검토 필요
     fun transfer(
-        fromAccountNumber: String,
-        toAccountNumber: String,
+        transfer: Transfer,
+        fromAccountId: AccountId,
+        toAccountId: AccountId,
         transferAmount: String,
     ) {
         logger.debug("[kenny] Transfer received")
-        val fromAccount = loadAccount.execute(fromAccountNumber)
-        val toAccount = loadAccount.execute(toAccountNumber)
-        transfer.execute(
-            fromAccount,
-            toAccount,
-            Money(transferAmount.toBigDecimal())
-        )
+        loadAccount.execute(fromAccountId.accountNumber)
+            .withdraw(transfer.amount)
+        loadAccount.execute(toAccountId.accountNumber)
+            .deposit(transfer.amount)
+        // TODO: 이체 도메인 로직 처리 추가 필요!
     }
 }

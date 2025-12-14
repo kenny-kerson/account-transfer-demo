@@ -1,4 +1,4 @@
-package com.kenny.atd.transfer.entity
+package com.kenny.atd.transfer.vo
 
 data class TransferId(
     val accountNumber: String,

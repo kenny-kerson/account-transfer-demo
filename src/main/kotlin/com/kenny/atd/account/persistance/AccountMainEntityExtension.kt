@@ -2,7 +2,7 @@ package com.kenny.atd.account.persistance
 
 import com.kenny.atd.account.AccountStatus
 import com.kenny.atd.account.entity.Account
-import com.kenny.atd.account.entity.AccountId
+import com.kenny.atd.account.vo.AccountId
 import com.kenny.atd.shared.BankCode
 import com.kenny.atd.shared.Money
 
